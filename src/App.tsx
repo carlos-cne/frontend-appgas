@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <h1>Sisgas</h1>
-    </div>
-  );
-};
+import Routes from './routes';
+
+const App: React.FC = () => <Routes />;
 
 export default App;
