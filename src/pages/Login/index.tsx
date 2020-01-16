@@ -1,13 +1,12 @@
 import React from 'react';
 
-import { Container, LoginContainer, Input } from './styles';
+import { Container, Title, Subtitle } from './styles';
 
 export default function Login() {
   return (
     <Container>
-      <LoginContainer>
-        <Input />
-      </LoginContainer>
+      <Title>Bem vindo ao Sisgás!</Title>
+      <Subtitle>Seu sistema de gestão de entregas</Subtitle>
     </Container>
   );
 }
