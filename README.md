@@ -13,6 +13,16 @@ I have a backend too, but I've decided to not share. If you wanna know about, pl
 
 Sisgas is a Web App to control Gas (for cooking) delivery.
 
+## What I will use
+
+In this projec, I will use:
+
+- Styled-Component
+- React JS
+- TypeScript
+- CSS Grid
+- Atomic Design (?)
+
 ### Other informations
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
