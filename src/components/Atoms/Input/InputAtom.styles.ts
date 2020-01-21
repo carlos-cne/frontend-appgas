@@ -19,14 +19,9 @@ export const Container = styled.div<ContainerProps>`
 export interface StyledInputProps {
   fontSize: string;
   color: string;
-  placeholderColor: string;
 }
 
-export const StyledInput = styled.input.attrs((props: StyledInputProps) => ({
-  placeholder: {
-    color: props.placeholderColor,
-  },
-}))<StyledInputProps>`
+export const StyledInput = styled.input<StyledInputProps>`
   background-color: transparent;
   border: none;
   width: 100%;

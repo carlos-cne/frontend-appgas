@@ -5,13 +5,15 @@ import {
   ContainerProps,
   StyledInputProps,
   StyledInput,
-} from './Input.styles';
+} from './InputAtom.styles';
 
 interface InputProps extends ContainerProps, StyledInputProps {
   placeHolder?: string;
+  id?: string;
+  name?: string;
 }
 
-export default function Input(props: InputProps) {
+export default function InputAtom(props: InputProps) {
   const {
     bgColor,
     fontSize,
@@ -19,16 +21,23 @@ export default function Input(props: InputProps) {
     radius,
     width,
     placeHolder,
-    placeholderColor,
     color,
+    id,
+    name,
   } = props;
   return (
-    <Container bgColor={bgColor} height={height} radius={radius} width={width}>
+    <Container
+      id={id}
+      name={name}
+      bgColor={bgColor}
+      height={height}
+      radius={radius}
+      width={width}
+    >
       <StyledInput
         fontSize={fontSize}
         placeholder={placeHolder}
         color={color}
-        placeholderColor={placeholderColor}
       />
     </Container>
   );
