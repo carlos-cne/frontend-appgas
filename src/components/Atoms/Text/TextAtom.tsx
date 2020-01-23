@@ -2,22 +2,22 @@ import React from 'react';
 
 import { StyledText } from './TextAtom.styles';
 
-interface TextProps {
+export interface TextProps {
   children: string;
-  fontSize: string;
-  fontWeight: 'regular' | 'bold';
-  color: string;
-  [key: string]: string;
+  textFontSize: string;
+  textFontWeight: 'regular' | 'bold';
+  textColor: string;
+  [textKeys: string]: string;
 }
 
 export default function TextAtom(props: TextProps) {
-  const { fontSize, fontWeight, color, children, key } = props;
+  const { textFontSize, textFontWeight, textColor, children, textKeys } = props;
   return (
     <StyledText
-      fontSize={fontSize}
-      fontWeight={fontWeight}
-      color={color}
-      {...key}
+      fontSize={textFontSize}
+      fontWeight={textFontWeight}
+      color={textColor}
+      {...textKeys}
     >
       {children}
     </StyledText>

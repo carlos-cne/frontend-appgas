@@ -2,46 +2,46 @@ import React from 'react';
 
 import { Container, StyledInput } from './InputAtom.styles';
 
-interface InputProps {
+export interface InputProps {
   placeHolder: string;
-  id: string;
-  name: string;
-  bgColor: string;
-  fontSize: string;
-  height: string;
-  radius: string;
-  width: string;
-  color: string;
-  [key: string]: string;
+  inputId: string;
+  inputName: string;
+  inputBgColor: string;
+  inputFontSize: string;
+  inputHeight: string;
+  inputRadius: string;
+  inputWidth: string;
+  inputTextColor: string;
+  [inputKeys: string]: string;
 }
 
 export default function InputAtom(props: InputProps) {
   const {
-    bgColor,
-    fontSize,
-    height,
-    radius,
-    width,
-    placeHolder,
-    color,
-    id,
-    name,
-    key,
+    inputBgColor,
+    inputFontSize,
+    inputHeight,
+    inputRadius,
+    inputWidth,
+    inputPlaceholder,
+    inputTextColor,
+    inputId,
+    inputName,
+    inputKeys,
   } = props;
   return (
     <Container
-      id={id}
-      name={name}
-      bgColor={bgColor}
-      height={height}
-      radius={radius}
-      width={width}
-      {...key}
+      id={inputId}
+      name={inputName}
+      bgColor={inputBgColor}
+      height={inputHeight}
+      radius={inputRadius}
+      width={inputWidth}
+      {...inputKeys}
     >
       <StyledInput
-        fontSize={fontSize}
-        placeholder={placeHolder || ''}
-        color={color}
+        fontSize={inputFontSize}
+        placeholder={inputPlaceholder}
+        color={inputTextColor}
       />
     </Container>
   );

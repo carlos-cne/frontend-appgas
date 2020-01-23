@@ -1,32 +1,50 @@
 import React from 'react';
 
-import InputAtom from '../../Atoms/Input/InputAtom';
-import TextAtom from '../../Atoms/Text/TextAtom';
+import InputAtom, { InputProps } from '../../Atoms/Input/InputAtom';
+import TextAtom, { TextProps } from '../../Atoms/Text/TextAtom';
 
 import { Container } from './InputMolecule.styles';
 
-export default function InputMolecule() {
+interface InputMoleculeProps extends InputProps, TextProps {}
+
+export default function InputMolecule(props: InputMoleculeProps) {
+  const {
+    textColor,
+    textFontSize,
+    textFontWeight,
+    textKeys,
+    inputBgColor,
+    inputFontSize,
+    inputHeight,
+    inputId,
+    inputName,
+    inputRadius,
+    inputTextColor,
+    inputWidth,
+    inputKeys,
+    placeHolder,
+  } = props;
   return (
     <Container>
       <TextAtom
-        color="#EFDBCB"
-        fontSize="14px"
-        fontWeight="regular"
-        fowardedAs="label"
-        htmlFor="input-email"
+        textColor={textColor}
+        textFontSize={textFontSize}
+        textFontWeight={textFontWeight}
+        {...textKeys}
       >
         Email
       </TextAtom>
       <InputAtom
-        name="input-email"
-        id="input-email"
-        bgColor="#345DA7"
-        color="#EFDBCB"
-        fontSize="14px"
-        height="48px"
-        width="100%"
-        radius="4px"
-        placeHolder="exemplo@email.com"
+        inputName={inputName}
+        inputId={inputId}
+        inputBgColor={inputBgColor}
+        inputTextColor={inputTextColor}
+        inputFontSize={inputFontSize}
+        inputHeight={inputHeight}
+        inputWidth={inputWidth}
+        inputRadius={inputRadius}
+        placeHolder={placeHolder}
+        {...inputKeys}
       />
     </Container>
   );
