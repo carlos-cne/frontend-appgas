@@ -1,20 +1,23 @@
 import React from 'react';
 
-import { StyledText, StyledTextProps } from './TextAtom.styles';
+import { StyledText } from './TextAtom.styles';
 
-interface TextProps extends StyledTextProps {
+interface TextProps {
   children: string;
-  // [rest: string]: string; I don't know if this prop are required for now.
+  fontSize: string;
+  fontWeight: 'regular' | 'bold';
+  color: string;
+  [key: string]: string;
 }
 
 export default function TextAtom(props: TextProps) {
-  const { fontSize, fontWeight, color, children } = props;
+  const { fontSize, fontWeight, color, children, key } = props;
   return (
     <StyledText
       fontSize={fontSize}
       fontWeight={fontWeight}
       color={color}
-      // {...rest}
+      {...key}
     >
       {children}
     </StyledText>

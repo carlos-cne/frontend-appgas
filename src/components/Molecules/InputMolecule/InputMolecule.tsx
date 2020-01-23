@@ -9,15 +9,16 @@ export default function InputMolecule() {
   return (
     <Container>
       <TextAtom
-        as="label"
-        htmlFor="input-email"
         color="#EFDBCB"
         fontSize="14px"
         fontWeight="regular"
+        fowardedAs="label"
+        htmlFor="input-email"
       >
         Email
       </TextAtom>
       <InputAtom
+        name="input-email"
         id="input-email"
         bgColor="#345DA7"
         color="#EFDBCB"

@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
+type FontWeight = 'regular' | 'bold';
 export interface StyledTextProps {
   fontSize: string;
   color: string;
-  fontWeight: 'regular' | 'bold';
+  fontWeight: FontWeight;
 }
 export const StyledText = styled.p<StyledTextProps>`
   font-size: ${props => props.fontSize};

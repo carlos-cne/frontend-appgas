@@ -1,16 +1,18 @@
 import React from 'react';
 
-import {
-  Container,
-  ContainerProps,
-  StyledInputProps,
-  StyledInput,
-} from './InputAtom.styles';
+import { Container, StyledInput } from './InputAtom.styles';
 
-interface InputProps extends ContainerProps, StyledInputProps {
-  placeHolder?: string;
-  id?: string;
-  name?: string;
+interface InputProps {
+  placeHolder: string;
+  id: string;
+  name: string;
+  bgColor: string;
+  fontSize: string;
+  height: string;
+  radius: string;
+  width: string;
+  color: string;
+  [key: string]: string;
 }
 
 export default function InputAtom(props: InputProps) {
@@ -24,6 +26,7 @@ export default function InputAtom(props: InputProps) {
     color,
     id,
     name,
+    key,
   } = props;
   return (
     <Container
@@ -33,10 +36,11 @@ export default function InputAtom(props: InputProps) {
       height={height}
       radius={radius}
       width={width}
+      {...key}
     >
       <StyledInput
         fontSize={fontSize}
-        placeholder={placeHolder}
+        placeholder={placeHolder || ''}
         color={color}
       />
     </Container>
